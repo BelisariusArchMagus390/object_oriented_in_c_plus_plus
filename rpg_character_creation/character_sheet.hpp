@@ -6,6 +6,7 @@
 class CharacterSheet{
     private:
         std::string name;
+        std::string race;
         float life_status;
         float mana_status;
         float physical_defense_status;
@@ -21,6 +22,10 @@ class CharacterSheet{
         //Setters of the atributes
         void setName(std::string name_){
             name = name_;
+        }
+
+        void setRace(std::string race_){
+            race = race_;
         }
 
         void setLifeStatus(float life_status_){
@@ -73,6 +78,10 @@ class CharacterSheet{
         //Getters of atributes
         std::string getName(void){
             return name;
+        }
+
+        std::string getRace(void){
+            return race;
         }
 
         float getLifeStatus(void){
