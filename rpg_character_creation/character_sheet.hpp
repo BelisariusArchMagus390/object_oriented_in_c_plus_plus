@@ -4,11 +4,12 @@
 #include <array>
 
 class CharacterSheet{
-    public:
+    private:
         std::string name;
         float life_status;
         float mana_status;
-        float defense_status;
+        float physical_defense_status;
+        float magical_defense_status;
         float physical_attack_power_status;
         float magical_attack_power_status;
         float attack_speed_status;
@@ -30,8 +31,12 @@ class CharacterSheet{
             mana_status = mana_status_;
         }
 
-        void setDefenseStatus(float defense_status_){
-            defense_status = defense_status_;
+        void setPhysicalDefenseStatus(float physical_defense_status_){
+            physical_defense_status = physical_defense_status_;
+        }
+
+        void setMagicalDefenseStatus(float magical_defense_status_){
+            magical_defense_status = magical_defense_status_;
         }
 
         void setPhysicalAttackPowerStatus(float physical_attack_power_status_){
@@ -50,18 +55,15 @@ class CharacterSheet{
             class_status = class_status_;
         }
 
-        void setAbilities(std::string abilitie[], int index_abilitie[]){
-            int line = index_abilitie[0];
-            int collumn = index_abilitie[1];
-
+        void setAbilities(std::array<std::string, 2> abilitie[], int index_abilitie){
             std::string name_abilitie = abilitie[0];
             std::string desctription_abilitie = abilitie[1];
 
-            abilities[line][collumn] = name_abilitie;
-            abilities[line][collumn+1] = desctription_abilitie;
+            abilities[index_abilitie][0] = name_abilitie;
+            abilities[index_abilitie][1] = desctription_abilitie;
         }
 
-        void setEquipament(std::array<std::string> equipament_){
+        void setEquipament(std::array<std::string, 2> equipament_){
             std::string name_equipament = equipament_[0];
             std::string description_equipament = equipament_[1];
             equipament[0] = name_equipament;
@@ -81,8 +83,12 @@ class CharacterSheet{
             return mana_status;
         }
 
-        float getDefenseStatus(void){
-            return defense_status;
+        float getPhysicalDefenseStatus(void){
+            return physical_defense_status;
+        }
+
+        float getMagicalDefenseStatus(void){
+            return magical_defense_status;
         }
 
         float getPhysicalAttackPowerStatus(void){
