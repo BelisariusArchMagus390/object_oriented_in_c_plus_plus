@@ -9,12 +9,19 @@
 class ClassStat{
     private:
         CharacterSheet character;
+
+        float life = character.getLifeStatus();
+        float mana = character.getManaStatus();
+        float physical_defense = character.getPhysicalDefenseStatus();
+        float magical_defense = character.getMagicalDefenseStatus();            
+        float physical_attack_power = character.getPhysicalAttackPowerStatus();
+        float magical_attack_power = character.getMagicalAttackPowerStatus();
+        float attack_speed = character.getAttackSpeedStatus();
+
     public:
         void chooseClass(char choice){
             std::array<std::string, 2> abilitie;
             std::array<std::string, 2> equipament;
-
-            
 
             switch(choice){
                 case 'm': // Mago                    
@@ -24,7 +31,15 @@ class ClassStat{
                     equipament.at(0) = "Cetro mágico";
                     equipament.at(1) = "Aumenta o dano mágico em 5";
 
-                    setCharacterValues(5, 15, 3, 6, 3, 10, 5, "Mago", abilitie, equipament);
+                    life = life + 5;
+                    mana = mana + 15;
+                    physical_defense = physical_defense + 3;
+                    magical_defense = magical_defense + 6;
+                    physical_attack_power = physical_attack_power + 3;
+                    magical_attack_power = magical_attack_power + 10;
+                    attack_speed = attack_speed + 5;
+
+                    setCharacterValues(life, mana, physical_defense, magical_defense, physical_attack_power, magical_attack_power, attack_speed, "Mago", abilitie, equipament);
                 break;
 
                 case 'c': // Cavaleiro
@@ -34,7 +49,15 @@ class ClassStat{
                     equipament.at(0) = "Espada de cavaleiro";
                     equipament.at(1) = "Aumenta o dano físico em 7";
 
-                    setCharacterValues(10, 5, 6, 3, 7, 0, 4, "Cavaleiro", abilitie, equipament);
+                    life = life + 10;
+                    mana = mana + 5;
+                    physical_defense = physical_defense + 6;
+                    magical_defense = magical_defense + 3;
+                    physical_attack_power = physical_attack_power + 7;
+                    magical_attack_power = magical_attack_power + 0;
+                    attack_speed = attack_speed + 4;
+
+                    setCharacterValues(life, mana, physical_defense, magical_defense, physical_attack_power, magical_attack_power, attack_speed, "Cavaleiro", abilitie, equipament);
                 break;
 
                 case 'l': // Ladino                    
@@ -44,32 +67,40 @@ class ClassStat{
                     equipament.at(0) = "Conjunto de duas adagas";
                     equipament.at(1) = "Aumenta o dano físico em 4";
 
-                    setCharacterValues(7, 3, 3, 3, 4, 0, 14, "Ladino", abilitie, equipament);
+                    life = life + 7;
+                    mana = mana + 3;
+                    physical_defense = physical_defense + 3;
+                    magical_defense = magical_defense + 3;
+                    physical_attack_power = physical_attack_power + 4;
+                    magical_attack_power = magical_attack_power + 0;
+                    attack_speed = attack_speed + 14;
+
+                    setCharacterValues(life, mana, physical_defense, magical_defense, physical_attack_power, magical_attack_power, attack_speed, "Ladino", abilitie, equipament);
                 break;
             }
         }
 
-        void setCharacterValues(float life_status, 
-            float mana_status,
-            float physical_defense_status,
-            float magical_defense_status,
-            float physical_attack_power_status,
-            float magical_attack_power_status,
-            float attack_speed_status,
-            std::string class_status,
-            std::array<std::string, 2>abilitie,
-            std::array<std::string, 2> equipament){
+        void setCharacterValues(float life_status_, 
+            float mana_status_,
+            float physical_defense_status_,
+            float magical_defense_status_,
+            float physical_attack_power_status_,
+            float magical_attack_power_status_,
+            float attack_speed_status_,
+            std::string class_status_,
+            std::array<std::string, 2> abilitie_,
+            std::array<std::string, 2> equipament_){
 
-                character.setLifeStatus(life_status);
-                character.setManaStatus(mana_status);
-                character.setPhysicalDefenseStatus(physical_defense_status);
-                character.setMagicalDefenseStatus(magical_defense_status);
-                character.setPhysicalAttackPowerStatus(physical_attack_power_status);
-                character.setMagicalAttackPowerStatus(magical_attack_power_status);
-                character.setAttackSpeedStatus(attack_speed_status);
-                character.setClass_status(class_status);
-                character.setAbilities(abilitie, 1);
-                character.setEquipament(equipament);
+                character.setLifeStatus(life_status_);
+                character.setManaStatus(mana_status_);
+                character.setPhysicalDefenseStatus(physical_defense_status_);
+                character.setMagicalDefenseStatus(magical_defense_status_);
+                character.setPhysicalAttackPowerStatus(physical_attack_power_status_);
+                character.setMagicalAttackPowerStatus(magical_attack_power_status_);
+                character.setAttackSpeedStatus(attack_speed_status_);
+                character.setClass_status(class_status_);
+                character.setAbilities(abilitie_, 1);
+                character.setEquipament(equipament_);
         }
 };
 

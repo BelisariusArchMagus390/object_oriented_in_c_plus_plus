@@ -41,25 +41,25 @@ class RaceStat{
             }
         }
 
-        void setCharacterValues(float life_status, 
-            float mana_status,
-            float physical_defense_status,
-            float magical_defense_status,
-            float physical_attack_power_status,
-            float magical_attack_power_status,
-            float attack_speed_status,
-            std::string race,
-            std::array<std::string, 2> abilitie){
+        void setCharacterValues(float life_status_, 
+            float mana_status_,
+            float physical_defense_status_,
+            float magical_defense_status_,
+            float physical_attack_power_status_,
+            float magical_attack_power_status_,
+            float attack_speed_status_,
+            std::string race_,
+            std::array<std::string, 2> abilitie_){
 
-                character.setLifeStatus(life_status);
-                character.setManaStatus(mana_status);
-                character.setPhysicalDefenseStatus(physical_defense_status);
-                character.setMagicalDefenseStatus(magical_defense_status);
-                character.setPhysicalAttackPowerStatus(physical_attack_power_status);
-                character.setMagicalAttackPowerStatus(magical_attack_power_status);
-                character.setAttackSpeedStatus(attack_speed_status);
-                character.setRace(race);
-                character.setAbilities(abilitie, 1);
+                character.setLifeStatus(life_status_);
+                character.setManaStatus(mana_status_);
+                character.setPhysicalDefenseStatus(physical_defense_status_);
+                character.setMagicalDefenseStatus(magical_defense_status_);
+                character.setPhysicalAttackPowerStatus(physical_attack_power_status_);
+                character.setMagicalAttackPowerStatus(magical_attack_power_status_);
+                character.setAttackSpeedStatus(attack_speed_status_);
+                character.setRace(race_);
+                character.setAbilities(abilitie_, 1);
         }
 };
 
