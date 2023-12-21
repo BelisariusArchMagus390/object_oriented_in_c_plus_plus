@@ -2,6 +2,7 @@
 #define CHARACTER_SHEET_H
 
 #include <array>
+#include <string>
 
 class CharacterSheet{
     private:
@@ -60,17 +61,17 @@ class CharacterSheet{
             class_status = class_status_;
         }
 
-        void setAbilities(std::array<std::string, 2> abilitie[], int index_abilitie){
-            std::string name_abilitie = abilitie[0];
-            std::string desctription_abilitie = abilitie[1];
+        void setAbilities(std::array<std::string, 2> abilitie, int index_abilitie){
+            std::string name_abilitie = abilitie.at(0);
+            std::string desctription_abilitie = abilitie.at(1);
 
             abilities[index_abilitie][0] = name_abilitie;
             abilities[index_abilitie][1] = desctription_abilitie;
         }
 
         void setEquipament(std::array<std::string, 2> equipament_){
-            std::string name_equipament = equipament_[0];
-            std::string description_equipament = equipament_[1];
+            std::string name_equipament = equipament_.at(0);
+            std::string description_equipament = equipament_.at(1);
             equipament[0] = name_equipament;
             equipament[1] = description_equipament;
         }
